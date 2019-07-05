@@ -56,6 +56,9 @@ class TicTacToe
   def draw?
     full? && won? == false
   end
+  def over?(board)
+    won? || draw? || full?
+  end
   WIN_COMBINATIONS = [
     [0,1,2],
     [3,4,5],
