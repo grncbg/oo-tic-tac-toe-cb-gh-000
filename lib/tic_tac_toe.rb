@@ -62,7 +62,7 @@ class TicTacToe
   def winner
     @board[won?[0]] if won? != false
   end
-  def play(board)
+  def play
     until over?
       turn
       won?
