@@ -24,6 +24,9 @@ class TicTacToe
   def turn_count
     @board.count{|c| c != " "}
   end
+  def current_player(board)
+    ["X", "O"][turn_count(board) % 2]
+  end
   WIN_COMBINATIONS = [
     [0,1,2],
     [3,4,5],
