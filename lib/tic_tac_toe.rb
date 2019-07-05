@@ -38,6 +38,18 @@ class TicTacToe
       turn
     end
   end
+  def won?
+    pos = WIN_COMBINATIONS.find do |indexes|
+      ["X", "O"].any? do |c|
+        indexes.all?{|i| @board[i]==c}
+      end
+    end
+    if pos == nil
+      false
+    else
+      pos
+    end
+  end
   WIN_COMBINATIONS = [
     [0,1,2],
     [3,4,5],
