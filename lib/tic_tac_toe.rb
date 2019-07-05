@@ -27,6 +27,17 @@ class TicTacToe
   def current_player
     ["X", "O"][turn_count % 2]
   end
+  def turn(board)
+    puts "Please enter 1-9:"
+    input = gets.strip
+    index = input_to_index(input)
+    if valid_move?(board, index)
+      move(board, index, current_player(board))
+      display_board(board)
+    else
+      turn(board)
+    end
+  end
   WIN_COMBINATIONS = [
     [0,1,2],
     [3,4,5],
