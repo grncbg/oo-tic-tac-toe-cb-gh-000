@@ -50,6 +50,9 @@ class TicTacToe
       pos
     end
   end
+  def full?
+    @board.none?{|c| c == " "}
+  end
   WIN_COMBINATIONS = [
     [0,1,2],
     [3,4,5],
